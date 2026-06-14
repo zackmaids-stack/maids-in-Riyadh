@@ -18,12 +18,12 @@ function handleSubmit(event) {
     const message = form.querySelector('textarea').value;
     
     // Create WhatsApp message
-    const whatsappMessage = `Hello! I would like to book a cleaning service.\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nService: ${service}\nMessage: ${message}`;
+    const whatsappMessage = `مرحبا! أرغب في حجز خدمة تنظيف.\n\nالاسم: ${name}\nالبريد الإلكتروني: ${email}\nالهاتف: ${phone}\nالخدمة: ${service}\nالرسالة: ${message}`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
     const whatsappURL = `https://wa.me/966501234567?text=${encodedMessage}`;
     
     // Show confirmation and open WhatsApp
-    alert('Thank you for your request! You will be redirected to WhatsApp to confirm your booking.');
+    alert('شكرا لطلبك! سيتم تحويلك إلى واتساب لتأكيد الحجز.');
     window.open(whatsappURL, '_blank');
     
     // Reset form
