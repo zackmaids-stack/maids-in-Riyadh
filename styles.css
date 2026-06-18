@@ -14,9 +14,11 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
+    direction: rtl;
+    text-align: right;
 }
 
 .container {
@@ -45,7 +47,7 @@ body {
 .nav-brand-section {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
 .nav-brand {
@@ -208,11 +210,13 @@ body {
     color: var(--primary-color);
     padding: 1.5rem 1.5rem 0.5rem;
     font-size: 1.3rem;
+    text-align: right;
 }
 
 .team-card p {
     padding: 0 1.5rem 1.5rem;
     color: var(--text-light);
+    text-align: right;
 }
 
 /* Buttons */
@@ -350,7 +354,7 @@ body {
 .pricing-card .features {
     list-style: none;
     margin: 1.5rem 0;
-    text-align: left;
+    text-align: right;
 }
 
 .pricing-card .features li {
@@ -459,6 +463,8 @@ body {
     font-size: 1rem;
     transition: border-color 0.3s, background-color 0.3s;
     background-color: rgba(255, 255, 255, 0.95);
+    direction: rtl;
+    text-align: right;
 }
 
 .contact-form input:focus,
