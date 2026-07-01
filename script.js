@@ -6,21 +6,31 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Handle form submission
+// Handle form submission - Send to WhatsApp
 function handleSubmit(event) {
     event.preventDefault();
     
     const form = event.target;
-    const name = form.querySelector('input[type="text"]').value;
-    const email = form.querySelector('input[type="email"]').value;
-    const phone = form.querySelector('input[type="tel"]').value;
-    const service = form.querySelector('select').value;
-    const message = form.querySelector('textarea').value;
+    const name = form.querySelector('input[name="name"]').value;
+    const email = form.querySelector('input[name="email"]').value;
+    const phone = form.querySelector('input[name="phone"]').value;
+    const service = form.querySelector('select[name="service"]').value;
+    const message = form.querySelector('textarea[name="message"]').value;
     
     // Create WhatsApp message
-    const whatsappMessage = `مرحبا! أرغب في حجز خدمة تنظيف.\n\nالاسم: ${name}\nالبريد الإلكتروني: ${email}\nالهاتف: ${phone}\nالخدمة: ${service}\nالرسالة: ${message}`;
+    const whatsappMessage = `🔔 طلب خدمة تنظيف جديد
+
+👤 الاسم: ${name}
+📧 البريد الإلكتروني: ${email}
+📱 الهاتف: ${phone}
+🧹 الخدمة: ${service}
+💬 الرسالة: ${message}
+
+تم الإرسال من موقع خادمات في الرياض`;
+    
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappURL = `https://wa.me/966501234567?text=${encodedMessage}`;
+    // Replace with your actual WhatsApp number
+    const whatsappURL = `https://wa.me/966582446236?text=${encodedMessage}`;
     
     // Show confirmation and open WhatsApp
     alert('شكرا لطلبك! سيتم تحويلك إلى واتساب لتأكيد الحجز.');
@@ -46,7 +56,7 @@ const observer = new IntersectionObserver(function(entries) {
 }, observerOptions);
 
 // Observe all service cards, pricing cards, and testimonial cards
-document.querySelectorAll('.service-card, .pricing-card, .testimonial-card').forEach(card => {
+document.querySelectorAll('.service-card, .pricing-card, .testimonial-card, .feature-box, .team-card').forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(30px)';
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -81,3 +91,7 @@ window.addEventListener('load', () => {
         heroContent.style.opacity = '1';
     }
 });
+
+// Log page view for analytics
+console.log('Website loaded: خادمات في الرياض');
+console.log('Ready to serve Riyadh with professional cleaning services');
