@@ -1,0 +1,24 @@
+# Netlify
+.netlify/
+netlify.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+node_modules/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
